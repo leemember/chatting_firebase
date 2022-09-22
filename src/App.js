@@ -1,18 +1,20 @@
 import React from 'react';
-import { Route, Routes  } from "react-router-dom";
-
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ChatPage from './components/ChatPage';
 import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
 
 
 const App = () => {
+
     return (
-      <Routes>
-        <Route path="/" element={<ChatPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-      </Routes>
+      <Router>
+        <Routes>
+          <Route path="/" element={<ChatPage to="/" />} />
+          <Route path="/login" element={<LoginPage to="/login" />} />
+          <Route path="/register" element={<RegisterPage to="/register"/>} />
+        </Routes>
+     </Router>
     );
   }
 
